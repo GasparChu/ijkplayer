@@ -564,12 +564,13 @@ static int ikjmp_chkst_seek_l(int mp_state)
     return 0;
 }
 
-int ijkmp_seek_to_l(IjkMediaPlayer *mp, long msec)
+int ijkmp_seek_to_l(IjkMediaPlayer *mp, long msec, int direct)
 {
     assert(mp);
 
     MP_RET_IF_FAILED(ikjmp_chkst_seek_l(mp->mp_state));
 
+    mp->ffplayer->is->ic->pb->direct = direct;
     mp->seek_req = 1;
     mp->seek_msec = msec;
     ffp_remove_msg(mp->ffplayer, FFP_REQ_SEEK);
@@ -579,12 +580,12 @@ int ijkmp_seek_to_l(IjkMediaPlayer *mp, long msec)
     return 0;
 }
 
-int ijkmp_seek_to(IjkMediaPlayer *mp, long msec)
+int ijkmp_seek_to(IjkMediaPlayer *mp, long msec, int direct)
 {
     assert(mp);
     MPTRACE("ijkmp_seek_to(%ld)\n", msec);
     pthread_mutex_lock(&mp->mutex);
-    int retval = ijkmp_seek_to_l(mp, msec);
+    int retval = ijkmp_seek_to_l(mp, msec, direct);
     pthread_mutex_unlock(&mp->mutex);
     MPTRACE("ijkmp_seek_to(%ld)=%d\n", msec, retval);
 

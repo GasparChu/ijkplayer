@@ -33,7 +33,7 @@
 #import "ijkioapplication.h"
 #include "string.h"
 
-static const char *kIJKFFRequiredFFmpegVersion = "ff3.2--ijk0.7.6--20170324--001";
+static const char *kIJKFFRequiredFFmpegVersion = "ff3.2--ijk0.7.6--20181101--001";
 
 // It means you didn't call shutdown if you found this object leaked.
 @interface IJKWeakHolder : NSObject
@@ -540,7 +540,25 @@ inline static int getPlayerOption(IJKFFOptionCategory category)
      object:self];
 
     _bufferingPosition = 0;
-    ijkmp_seek_to(_mediaPlayer, aCurrentPlaybackTime * 1000);
+    ijkmp_seek_to(_mediaPlayer, aCurrentPlaybackTime * 1000, 0);
+}
+
+- (void)continuePlay
+{
+    if (!_mediaPlayer)
+        return;
+    
+    NSTimeInterval ret = self.currentPlaybackTime;
+    
+    _seeking = YES;
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:IJKMPMoviePlayerPlaybackStateDidChangeNotification
+     object:self];
+    
+    _bufferingPosition = 0;
+    ijkmp_seek_to(_mediaPlayer, ret * 1000, 1);
+    
+    [self play];
 }
 
 - (NSTimeInterval)currentPlaybackTime
