@@ -40,7 +40,7 @@
 }
 
 - (void)onClickPlayButton {
-    NSURL *url = [NSURL URLWithString:self.textView.text];
+    NSURL *url = [NSURL URLWithString:@"http://aliuwmp3.changba.com/userdata/video/45F6BD5E445E4C029C33DC5901307461.mp4"];
     NSString *scheme = [[url scheme] lowercaseString];
     
     if ([scheme isEqualToString:@"http"]
