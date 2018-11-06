@@ -33,6 +33,7 @@
 #import "NSString+IJKMedia.h"
 #import "ijkioapplication.h"
 #include "string.h"
+#import "Reachability.h"
 
 static const char *kIJKFFRequiredFFmpegVersion = "ff3.4-ijk0.8.7-20181102-001-networkErr";
 
@@ -74,6 +75,10 @@ static const char *kIJKFFRequiredFFmpegVersion = "ff3.4-ijk0.8.7-20181102-001-ne
     IjkIOAppCacheStatistic _cacheStat;
     NSTimer *_hudTimer;
     IJKSDLHudViewController *_hudViewController;
+    
+    Reachability *_internetReachability;
+    BOOL _networkChange;
+    BOOL _networkInvalidAndDidFinishErr;
 }
 
 @synthesize view = _view;
@@ -256,6 +261,9 @@ void IJKFFIOStatCompleteRegister(void (*cb)(const char *url,
 
         _notificationManager = [[IJKNotificationManager alloc] init];
         [self registerApplicationObservers];
+        
+        _internetReachability = [Reachability reachabilityForInternetConnection];
+        [_internetReachability startNotifier];
     }
     return self;
 }
@@ -564,7 +572,7 @@ inline static int getPlayerOption(IJKFFOptionCategory category)
 {
     if (!_mediaPlayer)
         return;
-
+    [_internetReachability stopNotifier];
     [self stopHudTimer];
     [self unregisterApplicationObservers];
     [self setScreenOn:NO];
@@ -1048,13 +1056,29 @@ inline static void fillMetaInternal(NSMutableDictionary *meta, IjkMediaMeta *raw
             [[NSNotificationCenter defaultCenter]
              postNotificationName:IJKMPMoviePlayerPlaybackStateDidChangeNotification
              object:self];
+            
+            if (_internetReachability.currentReachabilityStatus == NotReachable) {
+                _networkInvalidAndDidFinishErr = YES;
+                
+                _loadState = IJKMPMovieLoadStateStalled;
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:IJKMPMoviePlayerLoadStateDidChangeNotification
+                 object:self];
+            } else {
+                if (_networkChange) {//网络变换重试一次
+                    _networkChange = NO;
+                    [self continuePlay];
+                } else {
+                    [[NSNotificationCenter defaultCenter]
+                     postNotificationName:IJKMPMoviePlayerPlaybackDidFinishNotification
+                     object:self
+                     userInfo:@{
+                                IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(IJKMPMovieFinishReasonPlaybackError),
+                                @"error": @(avmsg->arg1)}];
+                }
+            }
 
-            [[NSNotificationCenter defaultCenter]
-                postNotificationName:IJKMPMoviePlayerPlaybackDidFinishNotification
-                object:self
-                userInfo:@{
-                    IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(IJKMPMovieFinishReasonPlaybackError),
-                    @"error": @(avmsg->arg1)}];
+            
             break;
         }
         case FFP_MSG_PREPARED: {
@@ -1202,7 +1226,6 @@ inline static void fillMetaInternal(NSMutableDictionary *meta, IjkMediaMeta *raw
 
             _loadState = IJKMPMovieLoadStateStalled;
             _isSeekBuffering = avmsg->arg1;
-
             [[NSNotificationCenter defaultCenter]
              postNotificationName:IJKMPMoviePlayerLoadStateDidChangeNotification
              object:self];
@@ -1734,6 +1757,12 @@ static int ijkff_inject_callback(void *opaque, int message, void *data, size_t d
                              selector:@selector(applicationWillTerminate)
                                  name:UIApplicationWillTerminateNotification
                                object:nil];
+    [_notificationManager addObserver:self
+                             selector:@selector(reachabilityChanged:)
+                                 name:kReachabilityChangedNotification
+                               object:nil];
+    
+    
 }
 
 - (void)unregisterApplicationObservers
@@ -1809,6 +1838,19 @@ static int ijkff_inject_callback(void *opaque, int message, void *data, size_t d
             [self pause];
         }
     });
+}
+
+- (void)reachabilityChanged:(NSNotification *)sender {
+    Reachability *curReach = [sender object];
+    if (curReach == _internetReachability) {
+        _networkChange = YES;
+        if (curReach.currentReachabilityStatus != NotReachable && _networkInvalidAndDidFinishErr) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self continuePlay];
+                _networkInvalidAndDidFinishErr = NO;
+            });
+        }
+    }
 }
 
 #pragma mark IJKFFHudController

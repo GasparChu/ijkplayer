@@ -166,6 +166,8 @@
 		54CF8A541E15287D00309DD5 /* ijkutils.h in Headers */ = {isa = PBXBuildFile; fileRef = 54CF8A481E15287D00309DD5 /* ijkutils.h */; };
 		83373958218C61CA00F8D6D9 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FC6FA7218BF2BE00852D4F /* libssl.a */; };
 		83373959218C61D100F8D6D9 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FC6FA6218BF2BE00852D4F /* libcrypto.a */; };
+		836C194321917370009ECCC2 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 836C194121917370009ECCC2 /* Reachability.h */; };
+		836C194421917370009ECCC2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C194221917370009ECCC2 /* Reachability.m */; };
 		83FC6FA8218BF2BF00852D4F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FC6FA6218BF2BE00852D4F /* libcrypto.a */; };
 		83FC6FA9218BF2BF00852D4F /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FC6FA7218BF2BE00852D4F /* libssl.a */; };
 		E607FFE11B7B62E3005F11A6 /* IJKDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E607FFDF1B7B60F9005F11A6 /* IJKDeviceModel.m */; };
@@ -320,6 +322,8 @@
 		54CF8A461E15287D00309DD5 /* ijktree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijktree.h; sourceTree = "<group>"; };
 		54CF8A471E15287D00309DD5 /* ijkutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ijkutils.c; sourceTree = "<group>"; };
 		54CF8A481E15287D00309DD5 /* ijkutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijkutils.h; sourceTree = "<group>"; };
+		836C194121917370009ECCC2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = IJKMediaPlayer/Reachability.h; sourceTree = "<group>"; };
+		836C194221917370009ECCC2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = IJKMediaPlayer/Reachability.m; sourceTree = "<group>"; };
 		83FC6FA6218BF2BE00852D4F /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		83FC6FA7218BF2BE00852D4F /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		E607FFDE1B7B60F9005F11A6 /* IJKDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IJKDeviceModel.h; path = IJKMediaPlayer/IJKDeviceModel.h; sourceTree = "<group>"; };
@@ -540,6 +544,15 @@
 			path = IJKMediaFrameworkWithSSL;
 			sourceTree = "<group>";
 		};
+		836C194021917334009ECCC2 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				836C194121917370009ECCC2 /* Reachability.h */,
+				836C194221917370009ECCC2 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		E63FC27217F013DE003551EB /* dummy */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 		E66F8DBC17EEC2CF00354D80 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				836C194021917334009ECCC2 /* Reachability */,
 				E6F727B517F2B1690043623F /* IJKMediaPlayer */,
 				E67C4E0219D15B0600415CEE /* IJKAVMoviePlayerController */,
 				E66F8DBE17EEC5DE00354D80 /* IJKMPMoviePlayerController */,
@@ -1037,6 +1051,7 @@
 				E654EAE91B6B295200B0F2D0 /* IJKMPMoviePlayerController.h in Headers */,
 				54A029B71D4700E6001C61C1 /* ijkavformat.h in Headers */,
 				E68B7ACF1C1E97B0001DE241 /* IJKSDLHudViewCell.h in Headers */,
+				836C194321917370009ECCC2 /* Reachability.h in Headers */,
 				5407EC291DF7F93B00457BFE /* IJKVideoToolBox.h in Headers */,
 				E698089B1C7EB13A0048A46C /* NSString+IJKMedia.h in Headers */,
 			);
@@ -1372,6 +1387,7 @@
 				54A029B81D4700E6001C61C1 /* ijklongurl.c in Sources */,
 				E6C459C01C708CAF004831EC /* renderer_rgb.c in Sources */,
 				E654EABA1B6B286B00B0F2D0 /* ffpipeline_ffplay.c in Sources */,
+				836C194421917370009ECCC2 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

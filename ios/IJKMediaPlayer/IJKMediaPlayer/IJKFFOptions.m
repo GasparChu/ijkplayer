@@ -41,11 +41,17 @@
     [options setPlayerOptionIntValue:30     forKey:@"max-fps"];
     [options setPlayerOptionIntValue:0      forKey:@"framedrop"];
     [options setPlayerOptionIntValue:3      forKey:@"video-pictq-size"];
-    [options setPlayerOptionIntValue:0      forKey:@"videotoolbox"];
+    [options setPlayerOptionIntValue:1      forKey:@"videotoolbox"];
     [options setPlayerOptionIntValue:960    forKey:@"videotoolbox-max-frame-width"];
+    
+    [options setPlayerOptionIntValue:1      forKey:@"packet-buffering"];//播放器缓冲 1打开 0关闭
+    [options setPlayerOptionIntValue:1      forKey:@"enable-accurate-seek"];//打开精确 seek
 
+    [options setFormatOptionIntValue:32                 forKey:@"probsize"];//播放前的探测Size，默认是1M, 改小一点会出画面更快
+    [options setFormatOptionIntValue:1                  forKey:@"multiple_requests"];
+    
     [options setFormatOptionIntValue:0                  forKey:@"auto_convert"];
-    [options setFormatOptionIntValue:1                  forKey:@"reconnect"];
+    [options setFormatOptionIntValue:0                  forKey:@"reconnect"];
     [options setFormatOptionIntValue:30 * 1000 * 1000   forKey:@"timeout"];
     [options setFormatOptionValue:@"ijkplayer"          forKey:@"user-agent"];
 
