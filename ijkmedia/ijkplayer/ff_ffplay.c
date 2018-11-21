@@ -3081,6 +3081,7 @@ static int read_thread(void *arg)
     if (!wait_mutex) {
         av_log(NULL, AV_LOG_FATAL, "SDL_CreateMutex(): %s\n", SDL_GetError());
         ret = AVERROR(ENOMEM);
+        last_error = -1001;
         goto fail;
     }
 
@@ -3094,6 +3095,7 @@ static int read_thread(void *arg)
     if (!ic) {
         av_log(NULL, AV_LOG_FATAL, "Could not allocate context.\n");
         ret = AVERROR(ENOMEM);
+        last_error = -1002;
         goto fail;
     }
     ic->interrupt_callback.callback = decode_interrupt_cb;
@@ -3120,6 +3122,7 @@ static int read_thread(void *arg)
     if (err < 0) {
         print_error(is->filename, err);
         ret = -1;
+        last_error = -1003;
         goto fail;
     }
     ffp_notify_msg1(ffp, FFP_MSG_OPEN_INPUT);
@@ -3131,6 +3134,7 @@ static int read_thread(void *arg)
         av_log(NULL, AV_LOG_ERROR, "Option %s not found.\n", t->key);
 #ifdef FFP_MERGE
         ret = AVERROR_OPTION_NOT_FOUND;
+        last_error = -1004;
         goto fail;
 #endif
     }
@@ -3175,6 +3179,7 @@ static int read_thread(void *arg)
             av_log(NULL, AV_LOG_WARNING,
                    "%s: could not find codec parameters\n", is->filename);
             ret = -1;
+            last_error = -1005;
             goto fail;
         }
     }
@@ -3305,6 +3310,7 @@ static int read_thread(void *arg)
         av_log(NULL, AV_LOG_FATAL, "Failed to open file '%s' or configure filtergraph\n",
                is->filename);
         ret = -1;
+        last_error = -1006;
         goto fail;
     }
     if (is->audio_stream >= 0) {
