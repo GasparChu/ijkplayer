@@ -3504,7 +3504,8 @@ static int read_thread(void *arg)
                     if (ffp->error) {
                         av_log(ffp, AV_LOG_INFO, "ffp_toggle_buffering: error: %d\n", ffp->error);
                         ffp_notify_msg1(ffp, FFP_REQ_PAUSE);
-                        ffp_notify_msg1(ffp, FFP_MSG_ERROR);
+//                        ffp_notify_msg1(ffp, FFP_MSG_ERROR);
+                        ffp_notify_msg3(ffp, FFP_MSG_ERROR, ffp->error, -1000);
                     } else {
                         av_log(ffp, AV_LOG_INFO, "ffp_toggle_buffering: completed: OK\n");
                         ffp_notify_msg1(ffp, FFP_MSG_COMPLETED);
@@ -3630,7 +3631,17 @@ static int read_thread(void *arg)
 
     if (!ffp->prepared || !is->abort_request) {
         ffp->last_error = last_error;
-        ffp_notify_msg2(ffp, FFP_MSG_ERROR, last_error);
+//        ffp_notify_msg2(ffp, FFP_MSG_ERROR, last_error);
+        char prepareStr[20];
+        char abort_requestStr[20];
+        char errorStr[20];
+        sprintf(prepareStr, "%d", ffp->prepared);
+        sprintf(abort_requestStr, "%d", is->abort_request);
+        sprintf(errorStr, "%d", -1001);
+        strcat(errorStr, prepareStr);
+        strcat(errorStr, abort_requestStr);
+        int error1 = atoi(errorStr);
+        ffp_notify_msg3(ffp, FFP_MSG_ERROR, last_error, error1);
     }
     SDL_DestroyMutex(wait_mutex);
     return 0;

@@ -74,6 +74,12 @@
     // [IJKFFMoviePlayerController checkIfPlayerVersionMatch:YES major:1 minor:0 micro:0];
 
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+    [options setPlayerOptionIntValue:25     forKey:@"min-frames"];
+    [options setPlayerOptionIntValue:1      forKey:@"videotoolbox"];
+    [options setPlayerOptionIntValue:1      forKey:@"packet-buffering"];//播放器缓冲 1打开 0关闭
+    [options setPlayerOptionIntValue:1      forKey:@"enable-accurate-seek"];//打开精确 seek
+    [options setFormatOptionIntValue:32     forKey:@"probsize"];//播放前的探测Size 改小一点会出画面更快
+    [options setFormatOptionIntValue:1      forKey:@"multiple_requests"];
 
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

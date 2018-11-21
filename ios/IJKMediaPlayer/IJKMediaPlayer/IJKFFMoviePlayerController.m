@@ -1074,7 +1074,9 @@ inline static void fillMetaInternal(NSMutableDictionary *meta, IjkMediaMeta *raw
                      object:self
                      userInfo:@{
                                 IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(IJKMPMovieFinishReasonPlaybackError),
-                                @"error": @(avmsg->arg1)}];
+                                @"error0": @(avmsg->arg1),
+                                @"error1":@(avmsg->arg2)
+                                }];
                 }
             }
 
