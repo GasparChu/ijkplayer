@@ -3122,7 +3122,7 @@ static int read_thread(void *arg)
     if (err < 0) {
         print_error(is->filename, err);
         ret = -1;
-        last_error = -1003;
+        last_error = err;
         goto fail;
     }
     ffp_notify_msg1(ffp, FFP_MSG_OPEN_INPUT);
@@ -3638,16 +3638,23 @@ static int read_thread(void *arg)
     if (!ffp->prepared || !is->abort_request) {
         ffp->last_error = last_error;
 //        ffp_notify_msg2(ffp, FFP_MSG_ERROR, last_error);
-        char prepareStr[20];
-        char abort_requestStr[20];
-        char errorStr[20];
+        
+        char prepareStr[24];
+        char abort_requestStr[24];
+        char errorStr[24];
         sprintf(prepareStr, "%d", ffp->prepared);
         sprintf(abort_requestStr, "%d", is->abort_request);
         sprintf(errorStr, "%d", -1001);
         strcat(errorStr, prepareStr);
         strcat(errorStr, abort_requestStr);
         int error1 = atoi(errorStr);
-        ffp_notify_msg3(ffp, FFP_MSG_ERROR, last_error, error1);
+//        ffp_notify_msg3(ffp, FFP_MSG_ERROR, last_error, error1);
+        
+        char errbuf[128];
+        const char *errbuf_ptr = errbuf;
+        if (av_strerror(last_error, errbuf, sizeof(errbuf)) < 0)
+            errbuf_ptr = strerror(AVUNERROR(last_error));
+        ffp_notify_msg4(ffp, FFP_MSG_ERROR, last_error, error1, (void *)errbuf_ptr, (int)strlen(errbuf_ptr));
     }
     SDL_DestroyMutex(wait_mutex);
     return 0;

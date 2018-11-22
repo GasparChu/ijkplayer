@@ -1069,14 +1069,19 @@ inline static void fillMetaInternal(NSMutableDictionary *meta, IjkMediaMeta *raw
                     _networkChange = NO;
                     [self continuePlay];
                 } else {
+                    NSString *des = @"";
+                    if (avmsg->obj) {
+                        const char *errbuf_ptr = avmsg->obj;
+                        des = [NSString stringWithCString:errbuf_ptr encoding:NSASCIIStringEncoding];
+                    }
                     [[NSNotificationCenter defaultCenter]
                      postNotificationName:IJKMPMoviePlayerPlaybackDidFinishNotification
                      object:self
                      userInfo:@{
                                 IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(IJKMPMovieFinishReasonPlaybackError),
                                 @"error0": @(avmsg->arg1),
-                                @"error1":@(avmsg->arg2)
-                                }];
+                                @"error1":@(avmsg->arg2),
+                                @"des":des}];
                 }
             }
 
