@@ -22,6 +22,8 @@ extern int ffmpeg_main(int argc, char * argv[]);
     return instance;
 }
 
+// ffmpeg -i animated.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.mp4
+
 + (void)gifToMp4:(NSString *)inputStr output:(NSString *)outputStr
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -33,6 +35,8 @@ extern int ffmpeg_main(int argc, char * argv[]);
             "gif",
             "-i",
             input,
+            "-movflags",
+            "faststart",
             output
         };
         ffmpeg_main(sizeof(a)/sizeof(*a), a);
