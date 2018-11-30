@@ -111,7 +111,7 @@ elif [ "$FF_ARCH" = "arm64" ]; then
     FF_BUILD_NAME="x264-arm64"
     FF_XCRUN_OSVERSION="-miphoneos-version-min=7.0"
     X264_CFG_FLAGS_ARM="--host=aarch64-apple-darwin"
-    X264_CFG_FLAGS="--disable-asm $X264_CFG_FLAGS_ARM $X264_CFG_FLAGS"
+    X264_CFG_FLAGS="--enable-asm $X264_CFG_FLAGS_ARM $X264_CFG_FLAGS"
     FF_GASPP_EXPORT="GASPP_FIX_XCODE5=1"
 else
     echo "unknown architecture $FF_ARCH";

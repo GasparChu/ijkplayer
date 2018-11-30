@@ -152,7 +152,7 @@ elif [ "$FF_ARCH" = "arm64" ]; then
     FF_BUILD_NAME="ffmpeg-arm64"
     FF_BUILD_NAME_OPENSSL=openssl-arm64
     FF_XCRUN_OSVERSION="-miphoneos-version-min=7.0"
-    FF_XCODE_BITCODE="-fembed-bitcode"
+    #FF_XCODE_BITCODE="-fembed-bitcode"
     FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS $FFMPEG_CFG_FLAGS_ARM"
     FF_GASPP_EXPORT="GASPP_FIX_XCODE5=1"
 else
@@ -215,6 +215,9 @@ fi
 echo "\n--------------------"
 echo "[*] check x264"
 echo "----------------------"
+echo $FF_BUILD_ROOT
+FF_BUILD_NAME_X264="x264-arm64"
+echo $FF_BUILD_NAME_X264
 FFMPEG_DEP_X264_INC=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_X264/output/include
 FFMPEG_DEP_X264_LIB=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_X264/output/lib
 #--------------------
