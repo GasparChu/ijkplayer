@@ -3510,8 +3510,15 @@ static int read_thread(void *arg)
                     if (ffp->error) {
                         av_log(ffp, AV_LOG_INFO, "ffp_toggle_buffering: error: %d\n", ffp->error);
                         ffp_notify_msg1(ffp, FFP_REQ_PAUSE);
-//                        ffp_notify_msg1(ffp, FFP_MSG_ERROR);
+#if DEBUG || ADHOC
+                        char errbuf[128];
+                        const char *errbuf_ptr = errbuf;
+                        if (av_strerror(ffp->error, errbuf, sizeof(errbuf)) < 0)
+                            errbuf_ptr = strerror(AVUNERROR(ffp->error));
+                        ffp_notify_msg4(ffp, FFP_MSG_ERROR, ffp->error, -1000, (void *)errbuf_ptr, (int)strlen(errbuf_ptr));
+#else
                         ffp_notify_msg3(ffp, FFP_MSG_ERROR, ffp->error, -1000);
+#endif
                     } else {
                         av_log(ffp, AV_LOG_INFO, "ffp_toggle_buffering: completed: OK\n");
                         ffp_notify_msg1(ffp, FFP_MSG_COMPLETED);
@@ -3556,7 +3563,8 @@ static int read_thread(void *arg)
                     packet_queue_put_nullpacket(&is->subtitleq, is->subtitle_stream);
                 is->eof = 1;
                 ffp->error = pb_error;
-                av_log(ffp, AV_LOG_ERROR, "av_read_frame error: %s\n", ffp_get_error_string(ffp->error));
+//                av_log(ffp, AV_LOG_ERROR, "av_read_frame error: %s\n", ffp_get_error_string(ffp->error));
+                av_log(ffp, AV_LOG_DEBUG, "av_read_frame error: %s\n", strerror(AVUNERROR(ffp->error)));
                 // break;
             } else {
                 ffp->error = 0;
@@ -3632,13 +3640,12 @@ static int read_thread(void *arg)
 
     ret = 0;
  fail:
-    if (ic && !is->ic)
+    if(ic && !is->ic)
         avformat_close_input(&ic);
-
+            
     if (!ffp->prepared || !is->abort_request) {
         ffp->last_error = last_error;
-//        ffp_notify_msg2(ffp, FFP_MSG_ERROR, last_error);
-        
+#if DEBUG || ADHOC
         char prepareStr[24];
         char abort_requestStr[24];
         char errorStr[24];
@@ -3648,13 +3655,16 @@ static int read_thread(void *arg)
         strcat(errorStr, prepareStr);
         strcat(errorStr, abort_requestStr);
         int error1 = atoi(errorStr);
-//        ffp_notify_msg3(ffp, FFP_MSG_ERROR, last_error, error1);
         
         char errbuf[128];
         const char *errbuf_ptr = errbuf;
         if (av_strerror(last_error, errbuf, sizeof(errbuf)) < 0)
             errbuf_ptr = strerror(AVUNERROR(last_error));
         ffp_notify_msg4(ffp, FFP_MSG_ERROR, last_error, error1, (void *)errbuf_ptr, (int)strlen(errbuf_ptr));
+#else
+        ffp_notify_msg3(ffp, FFP_MSG_ERROR, last_error, -1001);
+#endif
+        
     }
     SDL_DestroyMutex(wait_mutex);
     return 0;
