@@ -478,7 +478,7 @@
 		F6032DD521AFB3270028E7B6 /* cmdutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmdutils.c; sourceTree = "<group>"; };
 		F6032DD721AFB3270028E7B6 /* ffmpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg.c; sourceTree = "<group>"; };
 		F6032DDA21AFB3270028E7B6 /* ffmpeg_videotoolbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_videotoolbox.c; sourceTree = "<group>"; };
-		F6032DDB21AFB3270028E7B6 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "../../ffmpeg-arm64/config.h"; sourceTree = "<group>"; };
+		F6032DDB21AFB3270028E7B6 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; };
 		F6032DF021AFB5230028E7B6 /* DCFFmpegTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFFmpegTool.h; sourceTree = "<group>"; };
 		F6032DF121AFB5240028E7B6 /* DCFFmpegTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFFmpegTool.m; sourceTree = "<group>"; };
 		F6FC559421B0DF4000296191 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../build/universal/lib/libavformat.a; sourceTree = "<group>"; };
@@ -700,7 +700,6 @@
 				F6FC559321B0DF2600296191 /* ffmpeg */,
 				F6032DF021AFB5230028E7B6 /* DCFFmpegTool.h */,
 				F6032DF121AFB5240028E7B6 /* DCFFmpegTool.m */,
-				F6032DDB21AFB3270028E7B6 /* config.h */,
 				F6032DC921AFB3270028E7B6 /* fftools */,
 				E6DBD3871C8941EB0058E4FB /* IJKFFMonitor.h */,
 				E6DBD3881C8941EB0058E4FB /* IJKFFMonitor.m */,
@@ -967,14 +966,15 @@
 		F6032DC921AFB3270028E7B6 /* fftools */ = {
 			isa = PBXGroup;
 			children = (
-				F6032DCA21AFB3270028E7B6 /* cmdutils.h */,
-				F6032DCB21AFB3270028E7B6 /* ffmpeg_opt.c */,
-				F6032DCC21AFB3270028E7B6 /* ffmpeg_cuvid.c */,
+				F6032DDB21AFB3270028E7B6 /* config.h */,
 				F6032DCD21AFB3270028E7B6 /* ffmpeg.h */,
 				F6032DD721AFB3270028E7B6 /* ffmpeg.c */,
+				F6032DCA21AFB3270028E7B6 /* cmdutils.h */,
+				F6032DD521AFB3270028E7B6 /* cmdutils.c */,
+				F6032DCB21AFB3270028E7B6 /* ffmpeg_opt.c */,
+				F6032DCC21AFB3270028E7B6 /* ffmpeg_cuvid.c */,
 				F6032DD121AFB3270028E7B6 /* ffmpeg_filter.c */,
 				F6032DD221AFB3270028E7B6 /* ffmpeg_hw.c */,
-				F6032DD521AFB3270028E7B6 /* cmdutils.c */,
 				F6032DDA21AFB3270028E7B6 /* ffmpeg_videotoolbox.c */,
 			);
 			name = fftools;
@@ -1566,6 +1566,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1618,6 +1619,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1734,6 +1736,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1773,6 +1776,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

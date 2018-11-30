@@ -41,7 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -r 10 -b:v 200k -t 10 %@",BundlePath(@"1.mp4"),DocumentPath(@"output.mp4")]];
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -loop 1 -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 %@",BundlePath(@"WechatIMG657.png"),DocumentPath(@"output.mp4")]];
+    
 //    BOOL result = [DCFFmpegTool
 //                   ffmpeg:
 //                   [NSString stringWithFormat:
@@ -135,6 +136,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -loop 1 -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 %@",BundlePath(@"WechatIMG657.png"),DocumentPath(@"output1.mp4")]];
+
+    NSLog(@"result:%d",result);
+    
+    return;
     
     switch (indexPath.section) {
         case 0: {
