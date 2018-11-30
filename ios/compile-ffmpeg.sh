@@ -60,6 +60,7 @@ do_lipo_ffmpeg () {
     xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
 }
 
+
 SSL_LIBS="libcrypto libssl"
 do_lipo_ssl () {
     LIB_FILE=$1
@@ -80,6 +81,26 @@ do_lipo_ssl () {
     fi
 }
 
+
+X264_LIBS="libx264"
+do_lipo_x264 () {
+    LIB_FILE=$1
+    LIPO_FLAGS=
+    for ARCH in $FF_ALL_ARCHS
+    do
+        ARCH_LIB_FILE="$UNI_BUILD_ROOT/build/x264-$ARCH/output/lib/$LIB_FILE"
+        if [ -f "$ARCH_LIB_FILE" ]; then
+            LIPO_FLAGS="$LIPO_FLAGS $ARCH_LIB_FILE"
+        else
+            echo "skip $LIB_FILE of $ARCH";
+        fi
+    done
+
+    if [ "$LIPO_FLAGS" != "" ]; then
+        xcrun lipo -create $LIPO_FLAGS -output $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+        xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
+    fi
+}
 do_lipo_all () {
     mkdir -p $UNI_BUILD_ROOT/build/universal/lib
     echo "lipo archs: $FF_ALL_ARCHS"
@@ -115,6 +136,13 @@ do_lipo_all () {
     do
         do_lipo_ssl "$SSL_LIB.a";
     done
+    
+    for X264_LIB in $X264_LIBS
+    do
+        do_lipo_x264 "$X264_LIB.a";
+    done
+
+    enable-small
 }
 
 #----------
