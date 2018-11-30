@@ -24,6 +24,10 @@
 #import "IJKDemoSampleViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
+#define DocumentDir [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+#define BundlePath(res) [[NSBundle mainBundle] pathForResource:res ofType:nil]
+#define DocumentPath(res) [DocumentDir stringByAppendingPathComponent:res]
+
 @interface IJKDemoMainViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property(nonatomic,strong) IBOutlet UITableView *tableView;
@@ -37,6 +41,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -r 10 -b:v 200k -t 10 %@",BundlePath(@"1.mp4"),DocumentPath(@"output.mp4")]];
+//    BOOL result = [DCFFmpegTool
+//                   ffmpeg:
+//                   [NSString stringWithFormat:
+//                    @"ffmpeg -i %@ -vcodec libx264 -r 10 -b 200k %@",BundlePath(@"100.png"),DocumentPath(@"output.mp4")]];
+
+    NSLog(@"DCFFmpegTool result:%d",result);
+
     self.title = @"Main";
     
     self.tableViewCellTitles = @[

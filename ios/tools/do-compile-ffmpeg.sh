@@ -213,6 +213,21 @@ fi
 
 #--------------------
 echo "\n--------------------"
+echo "[*] check x264"
+echo "----------------------"
+FFMPEG_DEP_X264_INC=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_X264/output/include
+FFMPEG_DEP_X264_LIB=$FF_BUILD_ROOT/build/$FF_BUILD_NAME_X264/output/lib
+#--------------------
+# with x264
+if [ -f "${FFMPEG_DEP_X264_LIB}/libx264.a" ]; then
+    FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS --enable-libx264"
+        FF_CFG_FLAGS="$FF_CFG_FLAGS --enable-encoder=libx264"
+    FFMPEG_CFLAGS="$FFMPEG_CFLAGS -I${FFMPEG_DEP_X264_INC}"
+    FFMPEG_DEP_LIBS="$FFMPEG_DEP_LIBS -L${FFMPEG_DEP_X264_LIB} -lx264"
+fi
+
+#--------------------
+echo "\n--------------------"
 echo "[*] configure"
 echo "----------------------"
 
