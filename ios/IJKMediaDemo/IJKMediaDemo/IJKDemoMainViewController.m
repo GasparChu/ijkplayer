@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -loop 1 -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 %@",BundlePath(@"WechatIMG657.png"),DocumentPath(@"output.mp4")]];
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 -y %@",BundlePath(@"3.gif"),DocumentPath(@"output.mp4")]];
     
 //    BOOL result = [DCFFmpegTool
 //                   ffmpeg:

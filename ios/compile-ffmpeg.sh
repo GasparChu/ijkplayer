@@ -81,7 +81,6 @@ do_lipo_ssl () {
     fi
 }
 
-
 X264_LIBS="libx264"
 do_lipo_x264 () {
     LIB_FILE=$1
@@ -101,6 +100,7 @@ do_lipo_x264 () {
         xcrun lipo -info $UNI_BUILD_ROOT/build/universal/lib/$LIB_FILE
     fi
 }
+
 do_lipo_all () {
     mkdir -p $UNI_BUILD_ROOT/build/universal/lib
     echo "lipo archs: $FF_ALL_ARCHS"

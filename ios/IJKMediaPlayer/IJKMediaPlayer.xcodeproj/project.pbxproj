@@ -246,18 +246,19 @@
 		E6DBD3891C8941EB0058E4FB /* IJKFFMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = E6DBD3871C8941EB0058E4FB /* IJKFFMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6DBD38A1C8941EB0058E4FB /* IJKFFMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DBD3881C8941EB0058E4FB /* IJKFFMonitor.m */; };
 		E6E1B9A81C741F72000C6C72 /* renderer_yuv420sp_vtb.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B9A71C741F72000C6C72 /* renderer_yuv420sp_vtb.m */; };
-		F6032DDC21AFB3270028E7B6 /* cmdutils.h in Headers */ = {isa = PBXBuildFile; fileRef = F6032DCA21AFB3270028E7B6 /* cmdutils.h */; };
-		F6032DDD21AFB3270028E7B6 /* ffmpeg_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DCB21AFB3270028E7B6 /* ffmpeg_opt.c */; };
-		F6032DDE21AFB3270028E7B6 /* ffmpeg_cuvid.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DCC21AFB3270028E7B6 /* ffmpeg_cuvid.c */; };
-		F6032DDF21AFB3270028E7B6 /* ffmpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = F6032DCD21AFB3270028E7B6 /* ffmpeg.h */; };
-		F6032DE321AFB3270028E7B6 /* ffmpeg_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DD121AFB3270028E7B6 /* ffmpeg_filter.c */; };
-		F6032DE421AFB3270028E7B6 /* ffmpeg_hw.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DD221AFB3270028E7B6 /* ffmpeg_hw.c */; };
-		F6032DE721AFB3270028E7B6 /* cmdutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DD521AFB3270028E7B6 /* cmdutils.c */; };
-		F6032DE921AFB3270028E7B6 /* ffmpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DD721AFB3270028E7B6 /* ffmpeg.c */; };
-		F6032DEC21AFB3270028E7B6 /* ffmpeg_videotoolbox.c in Sources */ = {isa = PBXBuildFile; fileRef = F6032DDA21AFB3270028E7B6 /* ffmpeg_videotoolbox.c */; };
-		F6032DED21AFB3270028E7B6 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = F6032DDB21AFB3270028E7B6 /* config.h */; };
-		F6032DF221AFB5240028E7B6 /* DCFFmpegTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F6032DF021AFB5230028E7B6 /* DCFFmpegTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6032DF321AFB5240028E7B6 /* DCFFmpegTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F6032DF121AFB5240028E7B6 /* DCFFmpegTool.m */; };
+		F6DC5CE921B22E3300A03BBC /* cmdutils.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CDC21B22E3300A03BBC /* cmdutils.h */; };
+		F6DC5CEA21B22E3300A03BBC /* ffmpeg_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CDD21B22E3300A03BBC /* ffmpeg_opt.c */; };
+		F6DC5CEB21B22E3300A03BBC /* mathops.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CDE21B22E3300A03BBC /* mathops.h */; };
+		F6DC5CEC21B22E3300A03BBC /* ffmpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CDF21B22E3300A03BBC /* ffmpeg.h */; };
+		F6DC5CED21B22E3300A03BBC /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CE021B22E3300A03BBC /* config.h */; };
+		F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */; };
+		F6DC5CEF21B22E3300A03BBC /* ffmpeg_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE221B22E3300A03BBC /* ffmpeg_filter.c */; };
+		F6DC5CF021B22E3300A03BBC /* ffmpeg_hw.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE321B22E3300A03BBC /* ffmpeg_hw.c */; };
+		F6DC5CF121B22E3300A03BBC /* mathops.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE421B22E3300A03BBC /* mathops.c */; };
+		F6DC5CF221B22E3300A03BBC /* cmdutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE521B22E3300A03BBC /* cmdutils.c */; };
+		F6DC5CF321B22E3300A03BBC /* ffmpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE621B22E3300A03BBC /* ffmpeg.c */; };
+		F6DC5CF421B22E3300A03BBC /* DCFFmpegTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */; };
+		F6DC5CF521B22E3300A03BBC /* ffmpeg_videotoolbox.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */; };
 		F6FC559D21B0DF4100296191 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559421B0DF4000296191 /* libavformat.a */; };
 		F6FC559E21B0DF4100296191 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559521B0DF4000296191 /* libavutil.a */; };
 		F6FC559F21B0DF4100296191 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559621B0DF4000296191 /* libssl.a */; };
@@ -469,18 +470,19 @@
 		E6F727C117F7C9B90043623F /* IJKMediaPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IJKMediaPlayback.m; path = IJKMediaPlayer/IJKMediaPlayback.m; sourceTree = "<group>"; };
 		E6FAD9551A515CE300725002 /* ijkmeta.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ijkmeta.c; sourceTree = "<group>"; };
 		E6FAD9561A515CE300725002 /* ijkmeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijkmeta.h; sourceTree = "<group>"; };
-		F6032DCA21AFB3270028E7B6 /* cmdutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmdutils.h; sourceTree = "<group>"; };
-		F6032DCB21AFB3270028E7B6 /* ffmpeg_opt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_opt.c; sourceTree = "<group>"; };
-		F6032DCC21AFB3270028E7B6 /* ffmpeg_cuvid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_cuvid.c; sourceTree = "<group>"; };
-		F6032DCD21AFB3270028E7B6 /* ffmpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffmpeg.h; sourceTree = "<group>"; };
-		F6032DD121AFB3270028E7B6 /* ffmpeg_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_filter.c; sourceTree = "<group>"; };
-		F6032DD221AFB3270028E7B6 /* ffmpeg_hw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_hw.c; sourceTree = "<group>"; };
-		F6032DD521AFB3270028E7B6 /* cmdutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmdutils.c; sourceTree = "<group>"; };
-		F6032DD721AFB3270028E7B6 /* ffmpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg.c; sourceTree = "<group>"; };
-		F6032DDA21AFB3270028E7B6 /* ffmpeg_videotoolbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_videotoolbox.c; sourceTree = "<group>"; };
-		F6032DDB21AFB3270028E7B6 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; };
-		F6032DF021AFB5230028E7B6 /* DCFFmpegTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFFmpegTool.h; sourceTree = "<group>"; };
-		F6032DF121AFB5240028E7B6 /* DCFFmpegTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFFmpegTool.m; sourceTree = "<group>"; };
+		F6DC5CDC21B22E3300A03BBC /* cmdutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmdutils.h; sourceTree = "<group>"; };
+		F6DC5CDD21B22E3300A03BBC /* ffmpeg_opt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_opt.c; sourceTree = "<group>"; };
+		F6DC5CDE21B22E3300A03BBC /* mathops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mathops.h; sourceTree = "<group>"; };
+		F6DC5CDF21B22E3300A03BBC /* ffmpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffmpeg.h; sourceTree = "<group>"; };
+		F6DC5CE021B22E3300A03BBC /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFFmpegTool.h; sourceTree = "<group>"; };
+		F6DC5CE221B22E3300A03BBC /* ffmpeg_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_filter.c; sourceTree = "<group>"; };
+		F6DC5CE321B22E3300A03BBC /* ffmpeg_hw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_hw.c; sourceTree = "<group>"; };
+		F6DC5CE421B22E3300A03BBC /* mathops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mathops.c; sourceTree = "<group>"; };
+		F6DC5CE521B22E3300A03BBC /* cmdutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmdutils.c; sourceTree = "<group>"; };
+		F6DC5CE621B22E3300A03BBC /* ffmpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg.c; sourceTree = "<group>"; };
+		F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFFmpegTool.m; sourceTree = "<group>"; };
+		F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_videotoolbox.c; sourceTree = "<group>"; };
 		F6FC559421B0DF4000296191 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../build/universal/lib/libavformat.a; sourceTree = "<group>"; };
 		F6FC559521B0DF4000296191 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../build/universal/lib/libavutil.a; sourceTree = "<group>"; };
 		F6FC559621B0DF4000296191 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../build/universal/lib/libssl.a; sourceTree = "<group>"; };
@@ -698,9 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				F6FC559321B0DF2600296191 /* ffmpeg */,
-				F6032DF021AFB5230028E7B6 /* DCFFmpegTool.h */,
-				F6032DF121AFB5240028E7B6 /* DCFFmpegTool.m */,
-				F6032DC921AFB3270028E7B6 /* fftools */,
+				F6DC5CDB21B22E3300A03BBC /* ffmpeg */,
 				E6DBD3871C8941EB0058E4FB /* IJKFFMonitor.h */,
 				E6DBD3881C8941EB0058E4FB /* IJKFFMonitor.m */,
 				4D32BC801F906E3600CE9F03 /* IJKSDLGLViewProtocol.h */,
@@ -963,22 +963,24 @@
 			name = IJKMediaPlayer;
 			sourceTree = "<group>";
 		};
-		F6032DC921AFB3270028E7B6 /* fftools */ = {
+		F6DC5CDB21B22E3300A03BBC /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
-				F6032DDB21AFB3270028E7B6 /* config.h */,
-				F6032DCD21AFB3270028E7B6 /* ffmpeg.h */,
-				F6032DD721AFB3270028E7B6 /* ffmpeg.c */,
-				F6032DCA21AFB3270028E7B6 /* cmdutils.h */,
-				F6032DD521AFB3270028E7B6 /* cmdutils.c */,
-				F6032DCB21AFB3270028E7B6 /* ffmpeg_opt.c */,
-				F6032DCC21AFB3270028E7B6 /* ffmpeg_cuvid.c */,
-				F6032DD121AFB3270028E7B6 /* ffmpeg_filter.c */,
-				F6032DD221AFB3270028E7B6 /* ffmpeg_hw.c */,
-				F6032DDA21AFB3270028E7B6 /* ffmpeg_videotoolbox.c */,
+				F6DC5CDC21B22E3300A03BBC /* cmdutils.h */,
+				F6DC5CDD21B22E3300A03BBC /* ffmpeg_opt.c */,
+				F6DC5CDE21B22E3300A03BBC /* mathops.h */,
+				F6DC5CDF21B22E3300A03BBC /* ffmpeg.h */,
+				F6DC5CE021B22E3300A03BBC /* config.h */,
+				F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */,
+				F6DC5CE221B22E3300A03BBC /* ffmpeg_filter.c */,
+				F6DC5CE321B22E3300A03BBC /* ffmpeg_hw.c */,
+				F6DC5CE421B22E3300A03BBC /* mathops.c */,
+				F6DC5CE521B22E3300A03BBC /* cmdutils.c */,
+				F6DC5CE621B22E3300A03BBC /* ffmpeg.c */,
+				F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */,
+				F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */,
 			);
-			name = fftools;
-			path = "../../ffmpeg-arm64/fftools";
+			path = ffmpeg;
 			sourceTree = "<group>";
 		};
 		F6FC559321B0DF2600296191 /* ffmpeg */ = {
@@ -1044,7 +1046,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6032DF221AFB5240028E7B6 /* DCFFmpegTool.h in Headers */,
 				E6DBD3891C8941EB0058E4FB /* IJKFFMonitor.h in Headers */,
 				54CF8A3C1E1526F800309DD5 /* ijkiourl.h in Headers */,
 				E654EAEA1B6B295200B0F2D0 /* IJKFFMoviePlayerController.h in Headers */,
@@ -1053,14 +1054,18 @@
 				54CF8A541E15287D00309DD5 /* ijkutils.h in Headers */,
 				54CF8A4A1E15287D00309DD5 /* ijkdict.h in Headers */,
 				E654EAE81B6B295200B0F2D0 /* IJKAVMoviePlayerController.h in Headers */,
+				F6DC5CE921B22E3300A03BBC /* cmdutils.h in Headers */,
 				E6C459841C7030AA004831EC /* ijksdl_gles2.h in Headers */,
 				E6C459BB1C706A13004831EC /* ijksdl_egl.h in Headers */,
 				E6C459BD1C7089AB004831EC /* ff_ffplay_options.h in Headers */,
 				E654EA8F1B6B27E600B0F2D0 /* IJKMediaFramework.h in Headers */,
+				F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */,
+				F6DC5CEB21B22E3300A03BBC /* mathops.h in Headers */,
 				E6C2E7BE1C92BD3600E59229 /* IJKKVOController.h in Headers */,
 				E69808A01C7EB2040048A46C /* IJKNotificationManager.h in Headers */,
 				54CF8A501E15287D00309DD5 /* ijkthreadpool.h in Headers */,
 				54CF8A391E1526F800309DD5 /* ijkiomanager.h in Headers */,
+				F6DC5CEC21B22E3300A03BBC /* ffmpeg.h in Headers */,
 				54CF8A4E1E15287D00309DD5 /* ijkstl.h in Headers */,
 				4D32BC811F906E3A00CE9F03 /* IJKSDLGLViewProtocol.h in Headers */,
 				E654EAE61B6B295200B0F2D0 /* IJKMediaModule.h in Headers */,
@@ -1068,8 +1073,6 @@
 				54CF8A521E15287D00309DD5 /* ijktree.h in Headers */,
 				E69BE5571B93FED300AFBA3F /* opt.h in Headers */,
 				54CF8A351E1526F800309DD5 /* ijkioapplication.h in Headers */,
-				F6032DED21AFB3270028E7B6 /* config.h in Headers */,
-				F6032DDC21AFB3270028E7B6 /* cmdutils.h in Headers */,
 				54CF8A3B1E1526F800309DD5 /* ijkioprotocol.h in Headers */,
 				E654EAE71B6B295200B0F2D0 /* IJKMediaPlayback.h in Headers */,
 				E654EAED1B6B29C100B0F2D0 /* IJKMediaPlayer.h in Headers */,
@@ -1077,8 +1080,8 @@
 				5407EC2D1DF81D2600457BFE /* IJKVideoToolBoxSync.h in Headers */,
 				E654EAE91B6B295200B0F2D0 /* IJKMPMoviePlayerController.h in Headers */,
 				54A029B71D4700E6001C61C1 /* ijkavformat.h in Headers */,
-				F6032DDF21AFB3270028E7B6 /* ffmpeg.h in Headers */,
 				E68B7ACF1C1E97B0001DE241 /* IJKSDLHudViewCell.h in Headers */,
+				F6DC5CED21B22E3300A03BBC /* config.h in Headers */,
 				836C194321917370009ECCC2 /* Reachability.h in Headers */,
 				5407EC291DF7F93B00457BFE /* IJKVideoToolBox.h in Headers */,
 				E698089B1C7EB13A0048A46C /* NSString+IJKMedia.h in Headers */,
@@ -1337,7 +1340,7 @@
 				E69BE5511B93FED300AFBA3F /* allformats.c in Sources */,
 				E654EABB1B6B286B00B0F2D0 /* ffpipenode_ffplay_vdec.c in Sources */,
 				E6C459981C7030B6004831EC /* renderer_yuv420p.c in Sources */,
-				F6032DEC21AFB3270028E7B6 /* ffmpeg_videotoolbox.c in Sources */,
+				F6DC5CF321B22E3300A03BBC /* ffmpeg.c in Sources */,
 				54CF8A4F1E15287D00309DD5 /* ijkthreadpool.c in Sources */,
 				E654EAA91B6B283D00B0F2D0 /* IJKAVMoviePlayerController.m in Sources */,
 				E654EAAC1B6B284C00B0F2D0 /* IJKFFMoviePlayerDef.m in Sources */,
@@ -1348,28 +1351,31 @@
 				E6C459CC1C70967F004831EC /* renderer_yuv420sp.c in Sources */,
 				E6C459941C7030B6004831EC /* yuv420p.fsh.c in Sources */,
 				E654EAC21B6B287E00B0F2D0 /* ijksdl_error.c in Sources */,
-				F6032DDD21AFB3270028E7B6 /* ffmpeg_opt.c in Sources */,
 				E607FFE11B7B62E3005F11A6 /* IJKDeviceModel.m in Sources */,
 				54CF8A361E1526F800309DD5 /* ijkiocache.c in Sources */,
 				E6C459BA1C706A13004831EC /* ijksdl_egl.c in Sources */,
 				54CF8A331E1526F800309DD5 /* ijkio.c in Sources */,
-				F6032DDE21AFB3270028E7B6 /* ffmpeg_cuvid.c in Sources */,
-				F6032DF321AFB5240028E7B6 /* DCFFmpegTool.m in Sources */,
 				E654EAA31B6B283700B0F2D0 /* IJKAudioKit.m in Sources */,
+				F6DC5CF421B22E3300A03BBC /* DCFFmpegTool.m in Sources */,
 				E654EAAA1B6B284300B0F2D0 /* IJKMPMoviePlayerController.m in Sources */,
 				E68B7AD01C1E97B0001DE241 /* IJKSDLHudViewCell.m in Sources */,
+				F6DC5CEA21B22E3300A03BBC /* ffmpeg_opt.c in Sources */,
 				E654EACB1B6B288A00B0F2D0 /* ijksdl_vout_overlay_videotoolbox.m in Sources */,
-				F6032DE421AFB3270028E7B6 /* ffmpeg_hw.c in Sources */,
+				F6DC5CEF21B22E3300A03BBC /* ffmpeg_filter.c in Sources */,
 				E654EAB11B6B285900B0F2D0 /* ff_ffpipenode.c in Sources */,
 				E654EAC41B6B287E00B0F2D0 /* ijksdl_stdinc.c in Sources */,
+				F6DC5CF221B22E3300A03BBC /* cmdutils.c in Sources */,
 				5407EC2A1DF7F93B00457BFE /* IJKVideoToolBox.m in Sources */,
 				54A029B91D4700E6001C61C1 /* ijksegment.c in Sources */,
 				E654EAA61B6B283700B0F2D0 /* IJKMediaUtils.m in Sources */,
 				E6C459931C7030B6004831EC /* common.c in Sources */,
 				E654EAC81B6B288A00B0F2D0 /* ijksdl_aout_ios_audiounit.m in Sources */,
 				E69BE5721B946FF600AFBA3F /* ijklivehook.c in Sources */,
+				F6DC5CF021B22E3300A03BBC /* ffmpeg_hw.c in Sources */,
+				F6DC5CF121B22E3300A03BBC /* mathops.c in Sources */,
 				54A029BA1D4700E6001C61C1 /* ijkurlhook.c in Sources */,
 				5407EC2E1DF81D2600457BFE /* IJKVideoToolBoxSync.m in Sources */,
+				F6DC5CF521B22E3300A03BBC /* ffmpeg_videotoolbox.c in Sources */,
 				E654EAA51B6B283700B0F2D0 /* IJKMediaPlayback.m in Sources */,
 				54CF8A491E15287D00309DD5 /* ijkdict.c in Sources */,
 				E654EAB01B6B285900B0F2D0 /* ff_ffpipeline.c in Sources */,
@@ -1377,7 +1383,6 @@
 				E654EACC1B6B288A00B0F2D0 /* IJKSDLAudioKit.m in Sources */,
 				E6C4599B1C7030B6004831EC /* mvp.vsh.c in Sources */,
 				E698089C1C7EB13A0048A46C /* NSString+IJKMedia.m in Sources */,
-				F6032DE321AFB3270028E7B6 /* ffmpeg_filter.c in Sources */,
 				E654EABF1B6B287600B0F2D0 /* ijksdl_vout_overlay_ffmpeg.c in Sources */,
 				E654EAC31B6B287E00B0F2D0 /* ijksdl_mutex.c in Sources */,
 				54CF8A511E15287D00309DD5 /* ijktree.c in Sources */,
@@ -1406,7 +1411,6 @@
 				E654EACE1B6B288A00B0F2D0 /* IJKSDLAudioUnitController.m in Sources */,
 				E6DBD38A1C8941EB0058E4FB /* IJKFFMonitor.m in Sources */,
 				E654EAAB1B6B284C00B0F2D0 /* IJKFFMoviePlayerController.m in Sources */,
-				F6032DE921AFB3270028E7B6 /* ffmpeg.c in Sources */,
 				E69808A11C7EB2040048A46C /* IJKNotificationManager.m in Sources */,
 				E654EAA41B6B283700B0F2D0 /* IJKMediaModule.m in Sources */,
 				E654EAAF1B6B285900B0F2D0 /* ff_cmdutils.c in Sources */,
@@ -1420,7 +1424,6 @@
 				E68B7AC61C1E7F20001DE241 /* IJKSDLHudViewController.m in Sources */,
 				E654EACA1B6B288A00B0F2D0 /* ijksdl_vout_ios_gles2.m in Sources */,
 				54A029B81D4700E6001C61C1 /* ijklongurl.c in Sources */,
-				F6032DE721AFB3270028E7B6 /* cmdutils.c in Sources */,
 				E6C459C01C708CAF004831EC /* renderer_rgb.c in Sources */,
 				E654EABA1B6B286B00B0F2D0 /* ffpipeline_ffplay.c in Sources */,
 				836C194421917370009ECCC2 /* Reachability.m in Sources */,
