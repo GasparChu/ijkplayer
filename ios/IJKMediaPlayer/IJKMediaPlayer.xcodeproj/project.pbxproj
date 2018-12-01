@@ -259,15 +259,15 @@
 		F6DC5CF321B22E3300A03BBC /* ffmpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE621B22E3300A03BBC /* ffmpeg.c */; };
 		F6DC5CF421B22E3300A03BBC /* DCFFmpegTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */; };
 		F6DC5CF521B22E3300A03BBC /* ffmpeg_videotoolbox.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */; };
-		F6FC559D21B0DF4100296191 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559421B0DF4000296191 /* libavformat.a */; };
-		F6FC559E21B0DF4100296191 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559521B0DF4000296191 /* libavutil.a */; };
-		F6FC559F21B0DF4100296191 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559621B0DF4000296191 /* libssl.a */; };
-		F6FC55A021B0DF4100296191 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559721B0DF4000296191 /* libcrypto.a */; };
-		F6FC55A121B0DF4100296191 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559821B0DF4000296191 /* libavfilter.a */; };
-		F6FC55A221B0DF4100296191 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559921B0DF4100296191 /* libswresample.a */; };
-		F6FC55A321B0DF4100296191 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559A21B0DF4100296191 /* libavcodec.a */; };
-		F6FC55A421B0DF4100296191 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559B21B0DF4100296191 /* libswscale.a */; };
-		F6FC55A521B0DF4100296191 /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC559C21B0DF4100296191 /* libx264.a */; };
+		F6DC5D0021B22EF400A03BBC /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CF721B22EF400A03BBC /* libcrypto.a */; };
+		F6DC5D0121B22EF400A03BBC /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CF821B22EF400A03BBC /* libavutil.a */; };
+		F6DC5D0221B22EF400A03BBC /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CF921B22EF400A03BBC /* libavfilter.a */; };
+		F6DC5D0321B22EF400A03BBC /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFA21B22EF400A03BBC /* libavcodec.a */; };
+		F6DC5D0421B22EF400A03BBC /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFB21B22EF400A03BBC /* libavformat.a */; };
+		F6DC5D0521B22EF400A03BBC /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFC21B22EF400A03BBC /* libswresample.a */; };
+		F6DC5D0621B22EF400A03BBC /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFD21B22EF400A03BBC /* libssl.a */; };
+		F6DC5D0721B22EF400A03BBC /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFE21B22EF400A03BBC /* libswscale.a */; };
+		F6DC5D0821B22EF400A03BBC /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DC5CFF21B22EF400A03BBC /* libx264.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -483,15 +483,15 @@
 		F6DC5CE621B22E3300A03BBC /* ffmpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg.c; sourceTree = "<group>"; };
 		F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFFmpegTool.m; sourceTree = "<group>"; };
 		F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_videotoolbox.c; sourceTree = "<group>"; };
-		F6FC559421B0DF4000296191 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../build/universal/lib/libavformat.a; sourceTree = "<group>"; };
-		F6FC559521B0DF4000296191 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../build/universal/lib/libavutil.a; sourceTree = "<group>"; };
-		F6FC559621B0DF4000296191 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../build/universal/lib/libssl.a; sourceTree = "<group>"; };
-		F6FC559721B0DF4000296191 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../build/universal/lib/libcrypto.a; sourceTree = "<group>"; };
-		F6FC559821B0DF4000296191 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../build/universal/lib/libavfilter.a; sourceTree = "<group>"; };
-		F6FC559921B0DF4100296191 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = ../../../build/universal/lib/libswresample.a; sourceTree = "<group>"; };
-		F6FC559A21B0DF4100296191 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../build/universal/lib/libavcodec.a; sourceTree = "<group>"; };
-		F6FC559B21B0DF4100296191 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = ../../../build/universal/lib/libswscale.a; sourceTree = "<group>"; };
-		F6FC559C21B0DF4100296191 /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = ../../../build/universal/lib/libx264.a; sourceTree = "<group>"; };
+		F6DC5CF721B22EF400A03BBC /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		F6DC5CF821B22EF400A03BBC /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		F6DC5CF921B22EF400A03BBC /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
+		F6DC5CFA21B22EF400A03BBC /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		F6DC5CFB21B22EF400A03BBC /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		F6DC5CFC21B22EF400A03BBC /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		F6DC5CFD21B22EF400A03BBC /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		F6DC5CFE21B22EF400A03BBC /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		F6DC5CFF21B22EF400A03BBC /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libx264.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,15 +507,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6FC559E21B0DF4100296191 /* libavutil.a in Frameworks */,
-				F6FC55A121B0DF4100296191 /* libavfilter.a in Frameworks */,
-				F6FC55A521B0DF4100296191 /* libx264.a in Frameworks */,
-				F6FC559D21B0DF4100296191 /* libavformat.a in Frameworks */,
-				F6FC55A021B0DF4100296191 /* libcrypto.a in Frameworks */,
-				F6FC55A421B0DF4100296191 /* libswscale.a in Frameworks */,
-				F6FC55A221B0DF4100296191 /* libswresample.a in Frameworks */,
-				F6FC55A321B0DF4100296191 /* libavcodec.a in Frameworks */,
-				F6FC559F21B0DF4100296191 /* libssl.a in Frameworks */,
+				F6DC5D0221B22EF400A03BBC /* libavfilter.a in Frameworks */,
+				F6DC5D0121B22EF400A03BBC /* libavutil.a in Frameworks */,
+				F6DC5D0821B22EF400A03BBC /* libx264.a in Frameworks */,
+				F6DC5D0621B22EF400A03BBC /* libssl.a in Frameworks */,
+				F6DC5D0021B22EF400A03BBC /* libcrypto.a in Frameworks */,
+				F6DC5D0721B22EF400A03BBC /* libswscale.a in Frameworks */,
+				F6DC5D0421B22EF400A03BBC /* libavformat.a in Frameworks */,
+				F6DC5D0521B22EF400A03BBC /* libswresample.a in Frameworks */,
+				F6DC5D0321B22EF400A03BBC /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,7 +699,6 @@
 		E6903EBE17EAF6C500CFD954 /* IJKFFMoviePlayerController */ = {
 			isa = PBXGroup;
 			children = (
-				F6FC559321B0DF2600296191 /* ffmpeg */,
 				F6DC5CDB21B22E3300A03BBC /* ffmpeg */,
 				E6DBD3871C8941EB0058E4FB /* IJKFFMonitor.h */,
 				E6DBD3881C8941EB0058E4FB /* IJKFFMonitor.m */,
@@ -966,6 +965,7 @@
 		F6DC5CDB21B22E3300A03BBC /* ffmpeg */ = {
 			isa = PBXGroup;
 			children = (
+				F6DC5CF621B22EF400A03BBC /* lib */,
 				F6DC5CDC21B22E3300A03BBC /* cmdutils.h */,
 				F6DC5CDD21B22E3300A03BBC /* ffmpeg_opt.c */,
 				F6DC5CDE21B22E3300A03BBC /* mathops.h */,
@@ -983,20 +983,21 @@
 			path = ffmpeg;
 			sourceTree = "<group>";
 		};
-		F6FC559321B0DF2600296191 /* ffmpeg */ = {
+		F6DC5CF621B22EF400A03BBC /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				F6FC559A21B0DF4100296191 /* libavcodec.a */,
-				F6FC559821B0DF4000296191 /* libavfilter.a */,
-				F6FC559421B0DF4000296191 /* libavformat.a */,
-				F6FC559521B0DF4000296191 /* libavutil.a */,
-				F6FC559721B0DF4000296191 /* libcrypto.a */,
-				F6FC559621B0DF4000296191 /* libssl.a */,
-				F6FC559921B0DF4100296191 /* libswresample.a */,
-				F6FC559B21B0DF4100296191 /* libswscale.a */,
-				F6FC559C21B0DF4100296191 /* libx264.a */,
+				F6DC5CF721B22EF400A03BBC /* libcrypto.a */,
+				F6DC5CF821B22EF400A03BBC /* libavutil.a */,
+				F6DC5CF921B22EF400A03BBC /* libavfilter.a */,
+				F6DC5CFA21B22EF400A03BBC /* libavcodec.a */,
+				F6DC5CFB21B22EF400A03BBC /* libavformat.a */,
+				F6DC5CFC21B22EF400A03BBC /* libswresample.a */,
+				F6DC5CFD21B22EF400A03BBC /* libssl.a */,
+				F6DC5CFE21B22EF400A03BBC /* libswscale.a */,
+				F6DC5CFF21B22EF400A03BBC /* libx264.a */,
 			);
-			path = ffmpeg;
+			name = lib;
+			path = ../../../build/universal/lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
