@@ -50,6 +50,7 @@
 		F6032DF921AFB63E0028E7B6 /* 100.png in Resources */ = {isa = PBXBuildFile; fileRef = F6032DF421AFB63D0028E7B6 /* 100.png */; };
 		F6032DFA21AFB63E0028E7B6 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F6032DF721AFB63E0028E7B6 /* 1.mp4 */; };
 		F6032DFB21AFB63E0028E7B6 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = F6032DF821AFB63E0028E7B6 /* 3.gif */; };
+		F6D3EE6221B5712F008B7C8D /* dongci.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = F6D3EE5F21B5712F008B7C8D /* dongci.MP4 */; };
 		F6DC5BF721B13A1F00A03BBC /* WechatIMG657.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DC5BF621B13A1F00A03BBC /* WechatIMG657.png */; };
 		F6E1373121AE4BA8006BA25D /* IJKMediaFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E654EAD71B6B28B100B0F2D0 /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		F6032DF421AFB63D0028E7B6 /* 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100.png; sourceTree = "<group>"; };
 		F6032DF721AFB63E0028E7B6 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		F6032DF821AFB63E0028E7B6 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		F6D3EE5F21B5712F008B7C8D /* dongci.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dongci.MP4; sourceTree = "<group>"; };
 		F6DC5BF621B13A1F00A03BBC /* WechatIMG657.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG657.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +278,7 @@
 		E6A9B55C17EDA6AC00A1A500 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F6D3EE5F21B5712F008B7C8D /* dongci.MP4 */,
 				F6DC5BF621B13A1F00A03BBC /* WechatIMG657.png */,
 				F6032DF721AFB63E0028E7B6 /* 1.mp4 */,
 				F6032DF821AFB63E0028E7B6 /* 3.gif */,
@@ -406,6 +409,7 @@
 				E67323AC1B69E76100CB9036 /* MoviePlayerImages.xcassets in Resources */,
 				E6903F1217EAF70200CFD954 /* Default.png in Resources */,
 				E6903F1417EAF70200CFD954 /* Default@2x.png in Resources */,
+				F6D3EE6221B5712F008B7C8D /* dongci.MP4 in Resources */,
 				E6903F1617EAF70200CFD954 /* Default-568h@2x.png in Resources */,
 				F6032DFA21AFB63E0028E7B6 /* 1.mp4 in Resources */,
 				E67323A71B69E6F800CB9036 /* AppIcons.xcassets in Resources */,

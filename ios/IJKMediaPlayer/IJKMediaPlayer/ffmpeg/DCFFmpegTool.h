@@ -10,10 +10,6 @@
 
 @interface DCFFmpegTool : NSObject
 
-+ (BOOL)ffmpeg:(NSString *)str;
-
-+ (BOOL)gifToMp4:(NSString *)inputStr output:(NSString *)outputStr;
-
-+ (BOOL)transcode:(NSString *)str output:(NSString *)outputStr;
++ (BOOL)ffmpeg:(NSString *)str progress:(void(^)(float progress,int result))progress;
 
 @end

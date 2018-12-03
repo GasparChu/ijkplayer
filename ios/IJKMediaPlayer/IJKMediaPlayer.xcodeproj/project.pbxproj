@@ -251,7 +251,7 @@
 		F6DC5CEB21B22E3300A03BBC /* mathops.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CDE21B22E3300A03BBC /* mathops.h */; };
 		F6DC5CEC21B22E3300A03BBC /* ffmpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CDF21B22E3300A03BBC /* ffmpeg.h */; };
 		F6DC5CED21B22E3300A03BBC /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CE021B22E3300A03BBC /* config.h */; };
-		F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */; };
+		F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6DC5CEF21B22E3300A03BBC /* ffmpeg_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE221B22E3300A03BBC /* ffmpeg_filter.c */; };
 		F6DC5CF021B22E3300A03BBC /* ffmpeg_hw.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE321B22E3300A03BBC /* ffmpeg_hw.c */; };
 		F6DC5CF121B22E3300A03BBC /* mathops.c in Sources */ = {isa = PBXBuildFile; fileRef = F6DC5CE421B22E3300A03BBC /* mathops.c */; };
@@ -970,14 +970,14 @@
 				F6DC5CDD21B22E3300A03BBC /* ffmpeg_opt.c */,
 				F6DC5CDE21B22E3300A03BBC /* mathops.h */,
 				F6DC5CDF21B22E3300A03BBC /* ffmpeg.h */,
+				F6DC5CE621B22E3300A03BBC /* ffmpeg.c */,
 				F6DC5CE021B22E3300A03BBC /* config.h */,
 				F6DC5CE121B22E3300A03BBC /* DCFFmpegTool.h */,
+				F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */,
 				F6DC5CE221B22E3300A03BBC /* ffmpeg_filter.c */,
 				F6DC5CE321B22E3300A03BBC /* ffmpeg_hw.c */,
 				F6DC5CE421B22E3300A03BBC /* mathops.c */,
 				F6DC5CE521B22E3300A03BBC /* cmdutils.c */,
-				F6DC5CE621B22E3300A03BBC /* ffmpeg.c */,
-				F6DC5CE721B22E3300A03BBC /* DCFFmpegTool.m */,
 				F6DC5CE821B22E3300A03BBC /* ffmpeg_videotoolbox.c */,
 			);
 			path = ffmpeg;
@@ -1047,6 +1047,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */,
 				E6DBD3891C8941EB0058E4FB /* IJKFFMonitor.h in Headers */,
 				54CF8A3C1E1526F800309DD5 /* ijkiourl.h in Headers */,
 				E654EAEA1B6B295200B0F2D0 /* IJKFFMoviePlayerController.h in Headers */,
@@ -1060,7 +1061,6 @@
 				E6C459BB1C706A13004831EC /* ijksdl_egl.h in Headers */,
 				E6C459BD1C7089AB004831EC /* ff_ffplay_options.h in Headers */,
 				E654EA8F1B6B27E600B0F2D0 /* IJKMediaFramework.h in Headers */,
-				F6DC5CEE21B22E3300A03BBC /* DCFFmpegTool.h in Headers */,
 				F6DC5CEB21B22E3300A03BBC /* mathops.h in Headers */,
 				E6C2E7BE1C92BD3600E59229 /* IJKKVOController.h in Headers */,
 				E69808A01C7EB2040048A46C /* IJKNotificationManager.h in Headers */,

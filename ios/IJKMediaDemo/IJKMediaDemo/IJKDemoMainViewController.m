@@ -23,6 +23,7 @@
 #import "IJKDemoLocalFolderViewController.h"
 #import "IJKDemoSampleViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <IJKMediaFramework/IJKMediaFramework.h>
 
 #define DocumentDir [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 #define BundlePath(res) [[NSBundle mainBundle] pathForResource:res ofType:nil]
@@ -41,12 +42,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 -y %@",BundlePath(@"3.gif"),DocumentPath(@"output.mp4")]];
-    
-//    BOOL result = [DCFFmpegTool
-//                   ffmpeg:
-//                   [NSString stringWithFormat:
-//                    @"ffmpeg -i %@ -vcodec libx264 -r 10 -b 200k %@",BundlePath(@"100.png"),DocumentPath(@"output.mp4")]];
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -b:v 600k -r:v 25 -s 720x576 -y %@",BundlePath(@"dongci.MP4"),DocumentPath(@"output.mp4")] progress:^(float progress,int result) {
+        NSLog(@"ffmpegTool_progress:%f result:%d",progress,result);
+    }];
 
     NSLog(@"DCFFmpegTool result:%d",result);
 
@@ -137,7 +135,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -loop 1 -i %@ -vcodec libx264 -pix_fmt yuv420p -vf scale=720:960 -r 30 -b:v 200k -t 4 %@",BundlePath(@"WechatIMG657.png"),DocumentPath(@"output1.mp4")]];
+    BOOL result = [DCFFmpegTool ffmpeg:[NSString stringWithFormat:@"ffmpeg -i %@ -vcodec libx264 -b:v 600k -r:v 25 -s 720x576 -y %@",BundlePath(@"dongci.MP4"),DocumentPath(@"output.mp4")] progress:^(float progress, int result) {
+
+        NSLog(@"progress:%f result:%d",progress,result);
+
+    }];
 
     NSLog(@"result:%d",result);
     
