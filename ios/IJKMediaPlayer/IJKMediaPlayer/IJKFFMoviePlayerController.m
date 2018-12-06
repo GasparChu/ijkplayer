@@ -221,12 +221,15 @@ void IJKFFIOStatCompleteRegister(void (*cb)(const char *url,
         _glView = [[IJKSDLGLView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         _glView.isThirdGLView = NO;
         _view = _glView;
+        
+#if DEBUG || ADHOC
         _hudViewController = [[IJKSDLHudViewController alloc] init];
         [_hudViewController setRect:_glView.frame];
         _shouldShowHudView = NO;
         _hudViewController.tableView.hidden = YES;
         [_view addSubview:_hudViewController.tableView];
-
+#endif
+        
         [self setHudValue:nil forKey:@"scheme"];
         [self setHudValue:nil forKey:@"host"];
         [self setHudValue:nil forKey:@"path"];
@@ -327,11 +330,14 @@ void IJKFFIOStatCompleteRegister(void (*cb)(const char *url,
         self.shouldShowHudView = options.showHudView;
         glView.isThirdGLView = YES;
         _view = _glView = (IJKSDLGLView *)glView;
+        
+#if DEBUG || ADHOC
         _hudViewController = [[IJKSDLHudViewController alloc] init];
         [_hudViewController setRect:_glView.frame];
         _shouldShowHudView = NO;
         _hudViewController.tableView.hidden = YES;
         [_view addSubview:_hudViewController.tableView];
+#endif
 
         [self setHudValue:nil forKey:@"scheme"];
         [self setHudValue:nil forKey:@"host"];
@@ -919,6 +925,7 @@ inline static NSString *formatedSpeed(int64_t bytes, int64_t elapsed_milli) {
 
 - (void)startHudTimer
 {
+#if DEBUG || ADHOC
     if (!_shouldShowHudView)
         return;
 
@@ -937,10 +944,12 @@ inline static NSString *formatedSpeed(int64_t bytes, int64_t elapsed_milli) {
             [self startHudTimer];
         });
     }
+#endif
 }
 
 - (void)stopHudTimer
 {
+#if DEBUG || ADHOC
     if (_hudTimer == nil)
         return;
 
@@ -953,6 +962,7 @@ inline static NSString *formatedSpeed(int64_t bytes, int64_t elapsed_milli) {
             [self stopHudTimer];
         });
     }
+#endif
 }
 
 - (void)setShouldShowHudView:(BOOL)shouldShowHudView
