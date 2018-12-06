@@ -222,7 +222,7 @@ void IJKFFIOStatCompleteRegister(void (*cb)(const char *url,
         _glView.isThirdGLView = NO;
         _view = _glView;
         
-#if DEBUG || ADHOC
+#if DEBUG
         _hudViewController = [[IJKSDLHudViewController alloc] init];
         [_hudViewController setRect:_glView.frame];
         _shouldShowHudView = NO;
@@ -331,7 +331,7 @@ void IJKFFIOStatCompleteRegister(void (*cb)(const char *url,
         glView.isThirdGLView = YES;
         _view = _glView = (IJKSDLGLView *)glView;
         
-#if DEBUG || ADHOC
+#if DEBUG
         _hudViewController = [[IJKSDLHudViewController alloc] init];
         [_hudViewController setRect:_glView.frame];
         _shouldShowHudView = NO;
@@ -925,7 +925,7 @@ inline static NSString *formatedSpeed(int64_t bytes, int64_t elapsed_milli) {
 
 - (void)startHudTimer
 {
-#if DEBUG || ADHOC
+#if DEBUG
     if (!_shouldShowHudView)
         return;
 
@@ -949,7 +949,7 @@ inline static NSString *formatedSpeed(int64_t bytes, int64_t elapsed_milli) {
 
 - (void)stopHudTimer
 {
-#if DEBUG || ADHOC
+#if DEBUG
     if (_hudTimer == nil)
         return;
 
@@ -1873,6 +1873,7 @@ static int ijkff_inject_callback(void *opaque, int message, void *data, size_t d
 #pragma mark IJKFFHudController
 - (void)setHudValue:(NSString *)value forKey:(NSString *)key
 {
+#if DEBUG
     if ([[NSThread currentThread] isMainThread]) {
         [_hudViewController setHudValue:value forKey:key];
     } else {
@@ -1880,6 +1881,7 @@ static int ijkff_inject_callback(void *opaque, int message, void *data, size_t d
             [self setHudValue:value forKey:key];
         });
     }
+#endif
 }
 
 @end
